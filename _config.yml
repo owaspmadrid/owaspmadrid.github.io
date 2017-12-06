@@ -1,0 +1,13 @@
+# Site settings
+title: OWASP Madrid Chapter
+email: contact<-@->owaspmadrid.org
+description: "find events, information and more of OWASP Madrid!"
+baseurl: ""
+url: "http://owaspmadrid.org"
+twitter_username: owaspmadrid
+github_username:  owaspmadrid
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: rouge
