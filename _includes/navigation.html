@@ -1,8 +1,9 @@
 
 <!-- Navigation -->
+
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">OWASP MADRID</a>
+    <a class="navbar-brand js-scroll-trigger" href="/">OWASP MADRID</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
@@ -10,18 +11,44 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">Ideas y Objetivos</a>
+          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl_root }}/#about">{% t navigation.ideas %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#events">Eventos</a>
+          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl_root }}/#events">{% t navigation.events %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#team">Miembros</a>
+          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl_root }}/#team">{% t navigation.members %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl_root }}/#contact">{% t navigation.contact %}</a>
         </li>
       </ul>
+
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          {{ site.languageNames[site.lang] }}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background-color: #42DCA3">
+          {% for lang in site.languageNames %}
+          {% if lang[0] == site.lang %} {% continue %} {% endif %}
+          {% if page.namespace %}
+            {% if page.namespace == "index" %}
+              {% if lang[0] == site.defaultLang %}
+              <li><a class="btn btn-default" href="/">{{ lang[1] }}</a></li>
+              {% else %}
+              <li><a class="btn btn-default" href="/{{ lang[0] }}/">{{ lang[1] }}</a></li>
+              {% endif %}
+            {% else %}
+              <li><a class="btn btn-default" href="{% tl {{page.namespace}} {{lang[0]}} %}">{{ lang[1] }}</a></li>
+            {% endif %}
+          {% else %}
+            <li><a class="btn btn-default" href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
     </div>
+
   </div>
 </nav>

@@ -11,3 +11,10 @@ github_username:  owaspmadrid
 markdown: kramdown
 permalink: pretty
 highlighter: rouge
+
+languages: ["es", "en"]
+exclude_from_localizations: ["static", "CNAME", "LICENSE", "README.md", "sitemap.xml"]
+defaultLang: es
+languageNames:
+  es: Espanol
+  en: English
