@@ -36,7 +36,7 @@ Después tendremos que posicionarnos en el **branch** source:
 > git checkout source
 ```
 
-[HACEMOS LOS CAMBIOS QUE QUERAMOS]
+*[HACEMOS LOS CAMBIOS QUE QUERAMOS]*
 
 
 Finalmente, para generar el sitio web y subir los cambios, solo tenemos que ejecutar el script **build-site.sh**:
