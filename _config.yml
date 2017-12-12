@@ -12,8 +12,8 @@ markdown: kramdown
 permalink: pretty
 highlighter: rouge
 
-gems:
-  - jekyll-multiple-languages-plugin
+#gems:
+#  - jekyll-multiple-languages-plugin
 
 languages: ["es", "en"]
 exclude_from_localizations: ["static", "CNAME", "LICENSE", "README.md", "sitemap.xml"]
