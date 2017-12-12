@@ -5,13 +5,10 @@ git checkout source
 jekyll build
 
 # Build static stie
-git add *
-git commit -am "Modification in site"
-git checkout master
-git checkout source -- _site
+git add * && git commit -am "Modification in site"
 
-mv _site/* .
-rm -rf _site/
+# Clean and build new site
+git checkout master && git checkout source -- _site && rm -rf en eventos/ gracias/ static/ index.html sitemap.xml && mv _site/* . && rm -rf _site/
 
 git add *
 git commit -am "New static site"
