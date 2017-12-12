@@ -152,7 +152,7 @@ permalink: /
             <small id="emailBody" class="form-text text-muted">{% t index.contact.mail.mail-body-description %}</small>
           </div>
           <input type="hidden" name="_subject" value="[OWASP Web contact]" />
-          <input type="hidden" name="_next" value="http://owaspmadrid.org/{% tl mail_sent %}" />
+          <input type="hidden" name="_next" value="http://owaspmadrid.org{% tl mail_sent %}" />
           <button type="submit" class="btn btn-primary">{% t index.contact.mail.mail-send %}</button>
         </form>
       </div>
